@@ -376,7 +376,9 @@ class OplogThread(threading.Thread):
                         for docman in self.doc_managers:
                             try:
                                 LOG.debug("OplogThread: Operation for this "
-                                          "entry is %s" % str(operation))
+                                          "entry is %s with %s"
+                                          % (str(operation),
+                                             str(entry['ts'])))
 
                                 # Remove
                                 if operation == 'd':
